@@ -1,0 +1,23 @@
+[package]
+name = "gnurx-sys"
+description = "Regular expression functionality from glibc extracted into a separate library, for Win32"
+version = "0.1.0"
+authors = [ "Koutheir Attouchi <koutheir.attouchi@microdoc.com>" ]
+edition = "2018"
+readme = "README.md"
+license = "LGPL-2.1-or-later"
+keywords = [ "regex", "glibc", "libgnurx", "regcomp", "regexec" ]
+categories = [ "external-ffi-bindings", "os::windows-apis", "parsing", "text-processing" ]
+build = "build.rs"
+links = "gnurx"
+
+[lib]
+crate-type = [ "rlib" ]
+
+[dependencies]
+
+[build-dependencies]
+cc      = { version = "1.0"  }
+walkdir = { version = "2.3"  }
+bindgen = { version = "0.55" }
+dunce   = { version = "1.0"  }
