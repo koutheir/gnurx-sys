@@ -1,7 +1,7 @@
 [![crates.io](https://img.shields.io/crates/v/gnurx-sys.svg)](https://crates.io/crates/gnurx-sys)
 [![docs.rs](https://docs.rs/gnurx-sys/badge.svg)](https://docs.rs/gnurx-sys)
 [![license](https://img.shields.io/github/license/koutheir/gnurx-sys?color=black)](https://raw.githubusercontent.com/koutheir/gnurx-sys/master/LICENSE.md)
-[![dependency status](https://deps.rs/crate/gnurx-sys/0.1.0/status.svg)](https://deps.rs/crate/gnurx-sys/0.1.0)
+[![dependency status](https://deps.rs/crate/gnurx-sys/0.1.1/status.svg)](https://deps.rs/crate/gnurx-sys/0.1.1)
 
 # `gnurx-sys`: Unsafe Rust bindings for `libgnurx`
 

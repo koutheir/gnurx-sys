@@ -84,15 +84,17 @@ fn build_static_lib(target: &str, out_dir: &Path) -> PathBuf {
     fs::copy(lib_src_dir.join("regex.h"), &regex_header)
         .expect("gnurx-sys: Failed to copy 'regex.h' from sources to output directory.");
 
-    cc::Build::new()
-        .static_flag(true)
-        .pic(true)
-        .warnings(true)
-        .extra_warnings(true)
-        .flag("-mthreads")
-        .include(&lib_src_dir)
-        .file(lib_src_dir.join("regex.c"))
-        .compile("gnurx-0");
+    if env::var_os("DOCS_RS").is_none() {
+        cc::Build::new()
+            .static_flag(true)
+            .pic(true)
+            .warnings(true)
+            .extra_warnings(true)
+            .flag("-mthreads")
+            .include(&lib_src_dir)
+            .file(lib_src_dir.join("regex.c"))
+            .compile("gnurx-0");
+    }
     regex_header
 }
 
