@@ -1,2 +1,5 @@
 /target
 Cargo.lock
+.directory
+.vscode/
+*.code-workspace
