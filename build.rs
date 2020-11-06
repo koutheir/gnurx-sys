@@ -93,7 +93,7 @@ fn build_static_lib(target: &str, out_dir: &Path) -> PathBuf {
             .flag("-mthreads")
             .include(&lib_src_dir)
             .file(lib_src_dir.join("regex.c"))
-            .compile("gnurx-0");
+            .compile("gnurx");
     }
     regex_header
 }

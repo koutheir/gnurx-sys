@@ -2,6 +2,12 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.0] - 2020-11-05
+
+### Changed
+
+- Changed the name of the statically compiled library from `libgnurx-0.a` to `libgnurx.a`.
+
 ## [0.1.2] - 2020-11-01
 
 ### Changed
