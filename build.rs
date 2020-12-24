@@ -21,7 +21,7 @@ fn main() {
 
     let regex_header = if let Some(prefix) = target_env_var_os("GNURX_LIB_DIR_PREFIX", &target) {
         let prefix = if let Ok(prefix) = dunce::canonicalize(&prefix) {
-            PathBuf::from(prefix)
+            prefix
         } else {
             panic!(
                 "gnurx-sys: Failed to canonicalize '{}'.",
@@ -132,7 +132,7 @@ fn target_env_var_os(name: &str, target: &str) -> Option<OsString> {
     env::var_os(format!("{}_{}", name, target))
         .or_else(|| env::var_os(format!("{}_{}", name, target_underscores)))
         .or_else(|| env::var_os(format!("TARGET_{}", name)))
-        .or_else(|| env::var_os(format!("{}", name)))
+        .or_else(|| env::var_os(name.to_string()))
 }
 
 fn rerun_if_env_changed(name: &str, target: &str) {
