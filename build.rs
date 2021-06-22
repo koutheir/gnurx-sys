@@ -8,16 +8,15 @@ fn main() {
     let target =
         env::var("TARGET").expect("gnurx-sys: Environment variable 'TARGET' was not defined.");
 
-    if !target.ends_with("-pc-windows-gnu") {
-        // Nothing to build for this architecture.
-        return;
-    };
-
     let out_dir = env::var_os("OUT_DIR")
         .map(PathBuf::from)
         .expect("gnurx-sys: Environment variable 'OUT_DIR' was not defined.");
 
     println!("cargo:root={}", out_dir.display());
+
+    if !target.ends_with("-pc-windows-gnu") {
+        return; // Nothing to build for this architecture.
+    }
 
     let regex_header = if let Some(prefix) = target_env_var_os("GNURX_LIB_DIR_PREFIX", &target) {
         let prefix = if let Ok(prefix) = dunce::canonicalize(&prefix) {
@@ -112,9 +111,9 @@ fn generate_bindings(out_dir: &Path, regex_header: &Path) {
         .rustfmt_bindings(true)
         .default_macro_constant_type(bindgen::MacroTypeVariation::Signed)
         .header(regex_header.to_str().unwrap())
-        .whitelist_function("reg(comp|exec|error|free)")
-        .whitelist_type("reg_errcode_t")
-        .whitelist_var("REG_.*")
+        .allowlist_function("reg(comp|exec|error|free)")
+        .allowlist_type("reg_errcode_t")
+        .allowlist_var("REG_.*")
         .opaque_type("regex_t")
         .generate()
         .expect("gnurx-sys: Failed to generate Rust bindings for 'regex.h'.");

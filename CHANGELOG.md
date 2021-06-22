@@ -2,6 +2,14 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.0] - 2021-06-22
+
+### Changed
+
+- Building the crate on targets other than `x86_64-pc-windows-gnu`
+  and `i686-pc-windows-gnu` results in an empty crate.
+- Updated dependencies.
+
 ## [0.2.1] - 2020-12-24
 
 ### Changed

@@ -1,6 +1,6 @@
 [![crates.io](https://img.shields.io/crates/v/gnurx-sys.svg)](https://crates.io/crates/gnurx-sys)
 [![docs.rs](https://docs.rs/gnurx-sys/badge.svg)](https://docs.rs/gnurx-sys)
-[![license](https://img.shields.io/github/license/koutheir/gnurx-sys?color=black)](https://raw.githubusercontent.com/koutheir/gnurx-sys/master/LICENSE.md)
+[![license](https://img.shields.io/github/license/koutheir/gnurx-sys?color=black)](https://raw.githubusercontent.com/koutheir/gnurx-sys/master/LICENSE.txt)
 
 # `gnurx-sys`: Unsafe Rust bindings for `libgnurx`
 
@@ -245,9 +245,9 @@ The `CHANGELOG.md` file details notable changes over time.
 
 ## License
 
-Copyright (c) 2020 Koutheir Attouchi.
+Copyright (c) 2020-2021 Koutheir Attouchi.
 
-See the `LICENSE.md` file at the top-level directory of this distribution.
+See the `LICENSE.txt` file at the top-level directory of this distribution.
 
 Licensed under the **LGPL version 2.1 license, or any later version thereof**.
 This file may not be copied, modified, or distributed except according to those terms.

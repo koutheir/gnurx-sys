@@ -1,8 +1,8 @@
 [package]
 name = "gnurx-sys"
 description = "Regular expression functionality from glibc extracted into a separate library, for Win32"
-version = "0.2.1" # Remember to update `html_root_url`.
-authors = [ "Koutheir Attouchi <koutheir.attouchi@microdoc.com>" ]
+version = "0.3.0" # Remember to update `html_root_url`.
+authors = [ "Koutheir Attouchi <koutheir@gmail.com>" ]
 edition = "2018"
 readme = "README.md"
 license = "LGPL-2.1-or-later"
@@ -16,12 +16,10 @@ documentation = "https://docs.rs/gnurx-sys"
 [lib]
 crate-type = [ "rlib" ]
 
-[dependencies]
-
 [build-dependencies]
 cc      = { version = "1.0"  }
 walkdir = { version = "2.3"  }
-bindgen = { version = "0.56" }
+bindgen = { version = "0.58" }
 dunce   = { version = "1.0"  }
 
 [package.metadata.docs.rs]

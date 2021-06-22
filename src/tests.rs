@@ -1,4 +1,9 @@
-#![cfg(all(test, target_family = "windows", target_env = "gnu"))]
+#![cfg(all(
+    test,
+    target_os = "windows",
+    target_env = "gnu",
+    any(target_arch = "x86", target_arch = "x86_64")
+))]
 
 use std::ffi::CString;
 use std::os::raw::c_int;
@@ -59,7 +64,7 @@ fn regerror_error() {
     let r = regcomp(&mut re_state, r#"ab\"#, REG_NOSUB | REG_NEWLINE);
     assert_eq!(r, super::reg_errcode_t::REG_EESCAPE as c_int);
 
-    assert!(!regerror(r, &mut re_state).is_empty());
+    assert!(!regerror(r, &re_state).is_empty());
 }
 
 #[test]

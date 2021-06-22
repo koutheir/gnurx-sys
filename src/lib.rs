@@ -1,4 +1,9 @@
-#![doc(html_root_url = "https://docs.rs/gnurx-sys/0.2.1")]
+#![cfg(all(
+    target_os = "windows",
+    target_env = "gnu",
+    any(target_arch = "x86", target_arch = "x86_64")
+))]
+#![doc(html_root_url = "https://docs.rs/gnurx-sys/0.3.0")]
 #![allow(non_upper_case_globals)]
 #![allow(non_camel_case_types)]
 #![allow(non_snake_case)]
@@ -255,8 +260,7 @@ Licensed under the **LGPL version 2.1 license, or any later version thereof**.
 This file may not be copied, modified, or distributed except according to those terms.
 */
 
-#[cfg(all(target_family = "windows", target_env = "gnu"))]
 include!(concat!(env!("OUT_DIR"), "/gnurx-sys.rs"));
 
-#[cfg(all(test, target_family = "windows", target_env = "gnu"))]
+#[cfg(test)]
 mod tests;
