@@ -69,8 +69,8 @@ fn build_static_lib(target: &str, out_dir: &Path) -> PathBuf {
 
     let lib_src_dir = src_dir.join("libgnurx");
 
-    for name in &["CC", "CFLAGS", "AR", "ARFLAGS"] {
-        rerun_if_env_changed(name, &target);
+    for &name in &["CC", "CFLAGS", "AR", "ARFLAGS"] {
+        rerun_if_env_changed(name, target);
     }
 
     rerun_if_dir_changed(&lib_src_dir);
