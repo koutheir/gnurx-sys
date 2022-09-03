@@ -1,27 +1,32 @@
 [package]
 name = "gnurx-sys"
 description = "Regular expression functionality from glibc extracted into a separate library, for Win32"
-version = "0.3.1" # Remember to update `html_root_url`.
-authors = [ "Koutheir Attouchi <koutheir@gmail.com>" ]
-edition = "2018"
+version = "0.3.2" # Remember to update `html_root_url`.
+authors = ["Koutheir Attouchi <koutheir@gmail.com>"]
+edition = "2021"
 readme = "README.md"
 license = "LGPL-2.1-or-later"
-keywords = [ "regex", "glibc", "libgnurx", "regcomp", "regexec" ]
-categories = [ "external-ffi-bindings", "os::windows-apis", "parsing", "text-processing" ]
+keywords = ["regex", "glibc", "libgnurx", "regcomp", "regexec"]
+categories = [
+    "external-ffi-bindings",
+    "os::windows-apis",
+    "parsing",
+    "text-processing",
+]
 build = "build.rs"
 links = "gnurx"
 repository = "https://github.com/koutheir/gnurx-sys"
 documentation = "https://docs.rs/gnurx-sys"
 
 [lib]
-crate-type = [ "rlib" ]
+crate-type = ["rlib"]
 
 [build-dependencies]
-cc      = { version = "1.0"  }
-walkdir = { version = "2.3"  }
-bindgen = { version = "0.59" }
-dunce   = { version = "1.0"  }
+cc      = { version = "1.0" }
+walkdir = { version = "2.3" }
+bindgen = { version = "0.60" }
+dunce   = { version = "1.0" }
 
 [package.metadata.docs.rs]
 default-target = "x86_64-pc-windows-gnu"
-targets = [ "x86_64-pc-windows-gnu", "i686-pc-windows-gnu" ]
+targets        = ["x86_64-pc-windows-gnu", "i686-pc-windows-gnu"]
