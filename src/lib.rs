@@ -4,7 +4,7 @@
     target_env = "gnu",
     any(target_arch = "x86", target_arch = "x86_64")
 ))]
-#![doc(html_root_url = "https://docs.rs/gnurx-sys/0.3.3")]
+#![doc(html_root_url = "https://docs.rs/gnurx-sys/0.3.4")]
 #![allow(non_upper_case_globals)]
 #![allow(non_camel_case_types)]
 #![allow(non_snake_case)]
