@@ -245,7 +245,7 @@ The `CHANGELOG.md` file details notable changes over time.
 
 ## License
 
-Copyright (c) 2020-2021 Koutheir Attouchi.
+Copyright (c) 2020-2023 Koutheir Attouchi.
 
 See the `LICENSE.txt` file at the top-level directory of this distribution.
 
