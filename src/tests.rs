@@ -61,7 +61,7 @@ fn regerror(errcode: c_int, preg: &super::regex_t) -> String {
 fn regerror_error() {
     let mut re_state = new_regex_t();
 
-    let r = regcomp(&mut re_state, r#"ab\"#, REG_NOSUB | REG_NEWLINE);
+    let r = regcomp(&mut re_state, r"ab\", REG_NOSUB | REG_NEWLINE);
     assert_eq!(r, super::reg_errcode_t::REG_EESCAPE as c_int);
 
     assert!(!regerror(r, &re_state).is_empty());
@@ -72,12 +72,12 @@ fn regcomp_invalid() {
     let mut re_state = new_regex_t();
 
     let params = [
-        (r#"ab\"#, super::reg_errcode_t::REG_EESCAPE),
+        (r"ab\", super::reg_errcode_t::REG_EESCAPE),
         (r#"a[9-6]b"#, super::reg_errcode_t::REG_ERANGE),
         (r#"a[0-b"#, super::reg_errcode_t::REG_EBRACK),
-        (r#"a\(bb"#, super::reg_errcode_t::REG_EPAREN),
-        (r#"ab\{2c"#, super::reg_errcode_t::REG_EBRACE),
-        (r#"a\3b"#, super::reg_errcode_t::REG_ESUBREG),
+        (r"a\(bb", super::reg_errcode_t::REG_EPAREN),
+        (r"ab\{2c", super::reg_errcode_t::REG_EBRACE),
+        (r"a\3b", super::reg_errcode_t::REG_ESUBREG),
     ];
 
     for (pattern, err_code) in &params {
@@ -155,7 +155,7 @@ fn regexec_match_extended() {
 fn regexec_multiple_matches() {
     let mut re_state = new_regex_t();
 
-    let pattern = r#"a\([0-9]\)-\([a-z]\)-\([a-z]\)\?b"#;
+    let pattern = r"a\([0-9]\)-\([a-z]\)-\([a-z]\)\?b";
     assert_eq!(0, regcomp(&mut re_state, pattern, REG_NEWLINE));
 
     let mut matches: [super::regmatch_t; 4] = [unsafe { mem::zeroed() }; 4];
