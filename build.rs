@@ -99,7 +99,7 @@ fn build_static_lib(target: &str, out_dir: &Path) -> PathBuf {
 
 fn generate_bindings(out_dir: &Path, regex_header: &Path) {
     let bindings = bindgen::Builder::default()
-        .parse_callbacks(Box::new(bindgen::CargoCallbacks))
+        .parse_callbacks(Box::new(bindgen::CargoCallbacks::new()))
         .default_enum_style(bindgen::EnumVariation::ModuleConsts)
         .derive_debug(true)
         .derive_copy(true)

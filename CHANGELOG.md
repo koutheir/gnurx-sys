@@ -2,11 +2,18 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.8] - 2024-03-27
+
+### Changed
+
+- Updated dependencies.
+- Moved repository to `codeberg.org`.
+
 ## [0.3.7] - 2023-10-31
 
 ### Changed
 
-- Updated dependencies: `bindgen`.
+- Updated dependencies.
 
 ## [0.3.6] - 2023-06-07
 
@@ -18,32 +25,32 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ### Changed
 
-- Updated dependencies: `bindgen`.
+- Updated dependencies.
 
 ## [0.3.4] - 2022-11-22
 
 ### Changed
 
-- Updated dependencies: `bindgen`.
+- Updated dependencies.
 
 ## [0.3.3] - 2022-11-20
 
 ### Changed
 
-- Updated dependencies: `bindgen`.
+- Updated dependencies.
 
 ## [0.3.2] - 2022-09-03
 
 ### Changed
 
 - Updated Rust edition to 2021.
-- Updated dependencies: `bindgen`.
+- Updated dependencies.
 
 ## [0.3.1] - 2021-07-28
 
 ### Changed
 
-- Updated dependencies: `bindgen`.
+- Updated dependencies.
 
 ## [0.3.0] - 2021-06-22
 
@@ -69,13 +76,13 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ### Changed
 
-- Removed dependencies status badge.
+- Removed dependencies' status badge.
 
 ## [0.1.1] - 2020-11-01
 
 ### Changed
 
-- Added more meta data for publishing on `crates.io` and `docs.io`.
+- Added more metadata for publishing on `crates.io` and `docs.io`.
 
 ## [0.1.0] - 2020-11-01
 
